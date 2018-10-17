@@ -24,3 +24,10 @@ $ pip3 install uflash
 $ uflash main.py
 
 puts my simple main program onto the microbit.
+
+I'm running this inside a docker container (as  I do with lots of
+my laptop installations) and the following docker parameter was
+useful for getting the microbit mount point to appear inside
+a docker container:
+`--mount type=bind,source=/media,target=/media,bind-propagation=rslave`
+
