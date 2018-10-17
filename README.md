@@ -19,9 +19,11 @@ https://stackoverflow.com/questions/52691853/generating-micropython-python-code-
 
 pointed me in the right direction for this.
 
+```
 $ virtualenv new
 $ pip3 install uflash
 $ uflash main.py
+```
 
 puts my simple main program onto the microbit.
 
