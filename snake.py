@@ -1,4 +1,5 @@
 from microbit import *
+import random
 
 # tells us whether the snake will crash
 # on the next move.
@@ -51,7 +52,17 @@ while True:
   # it is allowed to go wrong, just like a player is
   # allowed to go wrong
 
-  if will_crash(snake, snake_dir):
+  # are we forced to change direction by imminent crash?
+  # or, should we change direction randomly anyway?
+  # (in that second case, the path of not changing direction
+  # if we'd crash on either of our alternatives keeps us
+  # going rather than randomly turning to death)
+
+  # 20 comes from wanting to change direction randomly about
+  # once every two loops of the entire board
+  random_change = random.randint(0,20) == 7
+
+  if will_crash(snake, snake_dir) or random_change:
     # We'd better take some evasive action to
     # not crash.
     # We have a choice of directions - usually two
