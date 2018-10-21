@@ -1,16 +1,23 @@
 # left/right simon game
 
 from microbit import *
+import random
 
 display.scroll("SIMON /")
 
-level = 4
+level = 5
 
 display.scroll("LEVEL {} /".format(level))
 
 # TODO: generate this randomly, as long as
 # `level` says we should make it
-sequence = [1,2,1,1]
+
+sequence = []
+
+for n in range(0, level):
+
+  r = random.randint(1,2)
+  sequence.append(r)
 
 # play sequence
 
