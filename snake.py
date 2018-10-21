@@ -21,6 +21,10 @@ def will_crash(snake, snake_dir):
   if next_y < 0:
     return True
 
+  for (x,y) in snake:
+    if x == next_x and y == next_y:
+      return True
+
   return False
 
 snake_dir = (0,1)
