@@ -28,11 +28,16 @@ def will_crash(snake, snake_dir):
 
   return False
 
+
+def random_start_pos():
+  # avoid starting at an edge, so that we don't
+  # immediately crash
+  return [(random.randint(1,3), random.randint(1,3))]
+
 snake_dir = (0,1)
+snake = random_start_pos()
 
-snake = [(2,1), (2,2)]
-
-target_len = 1
+target_len = 2
 
 counts = 0
 
@@ -58,9 +63,7 @@ while True:
   # if we'd crash on either of our alternatives keeps us
   # going rather than randomly turning to death)
 
-  # 20 comes from wanting to change direction randomly about
-  # once every two loops of the entire board
-  random_change = random.randint(0,20) == 7
+  random_change = random.randint(0,10) == 7
 
   if will_crash(snake, snake_dir) or random_change:
     # We'd better take some evasive action to
@@ -71,6 +74,8 @@ while True:
     
     # assume we're going one of the 4 cardinal
     # directions
+
+    (dx,dy) = snake_dir
 
     if dx == 0: # then we're going along the y axis
                 # and are possible positions are along
@@ -91,9 +96,9 @@ while True:
   # this is the environment checking crashes
   if will_crash(snake, snake_dir):
     sleep(2000)
-    target_len = 1
+    target_len = 2
     snake_dir = (0,1)
-    snake = [(2,1), (2,2)]
+    snake = random_start_pos()
 
   (head_x,head_y) = snake[-1] 
   (dx,dy) = snake_dir
