@@ -77,3 +77,10 @@ microbit on-board buttons and screen.
 
 First, very basic A/B left/right simon game, with randomness using the
 A/B buttons, and symbols A B on screen.
+
+
+Next, start on a snake game - this will have L/R steering rather than
+compass steering, because I only have two buttons - though the costume
+version I think I'd rather have compass steering. Also prototyped a
+noughts and crosses board layout (but no logic)
+
