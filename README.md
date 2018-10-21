@@ -69,3 +69,11 @@ than nothing.
 
 Other than that, the library was straightforward to use - like
 neopixel libraries that I've used elsewhere.
+
+## 2018-10-21
+
+Attempting to write a couple of simple python games - just using the
+microbit on-board buttons and screen.
+
+First, very basic A/B left/right simon game, with randomness using the
+A/B buttons, and symbols A B on screen.
