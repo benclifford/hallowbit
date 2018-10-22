@@ -84,3 +84,10 @@ compass steering, because I only have two buttons - though the costume
 version I think I'd rather have compass steering. Also prototyped a
 noughts and crosses board layout (but no logic)
 
+
+## 2018-10-22
+
+Start sewing neopixels onto a tshirt. Had to rummage in mother's
+sewing box for a needle with a big enough eye as none of my
+needles were big enough. It took 2 hours to sew the first three.
+I hope I get faster.
