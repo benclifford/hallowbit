@@ -91,3 +91,24 @@ Start sewing neopixels onto a tshirt. Had to rummage in mother's
 sewing box for a needle with a big enough eye as none of my
 needles were big enough. It took 2 hours to sew the first three.
 I hope I get faster.
+
+## 2018-10-23
+
+Had 7 pixels sewn by bedtime last night - did 3 more when I woke up,
+improving my sewing technique (I hope) so that I'm getting much
+faster: using a single bus thread for power rails rather than
+a separate thread per pixel, and using one long thread and cutting
+it as I sew, rather than cutting 5 inch sections first and sewing
+them individually (and yes, I'm using inches as the units of
+measure for this project).
+
+All 10 pixels flash RGB in sequence using neoflasher.py - so the
+electrical connections are in place a bit.
+
+Apparently this setup will be washable!
+https://learn.adafruit.com/washing-wearable-electronics/hand-wash
+
+And in the evening, up to 15 LEDs. The last two weren't working but
+I snipped away from excess conductive thread and stretched and
+wiggled it and they started working. Which is not a very
+satisfying explanation.
