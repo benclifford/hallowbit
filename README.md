@@ -108,7 +108,7 @@ electrical connections are in place a bit.
 Apparently this setup will be washable!
 https://learn.adafruit.com/washing-wearable-electronics/hand-wash
 
-And in the evening, up to 15 LEDs. The last two weren't working but
+And in the evening, up to 20 LEDs. The last two weren't working but
 I snipped away from excess conductive thread and stretched and
 wiggled it and they started working. Which is not a very
 satisfying explanation.
