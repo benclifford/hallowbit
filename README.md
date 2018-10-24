@@ -140,5 +140,36 @@ Added a longer cross connect - from the two outer turns of the
 This is with a supply voltage, from the microbit, of 3.15v (measured
 across the capactor).
 
+After sewing in a negative rail cross connect, right from the start
+to the final curve (so sort of mirroring rotationally the
++ve cross connect), I now see a voltage across the end terminals
+of 2.95v vs a capacitor voltages of 3.15v
+
+But that final pixel isn't the dimmest now!
+
+The lowest voltage i can find, measuring across pads, is 2.90v
+sort of in the middle near curves, probably as the total distance
+is getting long.
+
+Anyway for this supply setup, where I don't want to draw too much
+power from the microbit, this is ok.
+
+If I illuminate more, I expect more voltage drop...
+
+Looks like maybe I can make the LEDs 10x as bright as they are
+now (20,20,20) and fit within power budget of 90mA. To my eye,
+the first two or three LEDs up by the power connector are
+noticeably whiter than all the others which are redder.
+
+With (20,20,20), voltages are:
+
+capacitor: 3.12v
+
+At end of tail: 2.85v
+
+Worst drop across an individual pixel: 2.76v
+
+voltage drop across cross connects: 0.3v (+ve) and 0.6v (-ve)
+
 
 
