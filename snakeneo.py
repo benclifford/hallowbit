@@ -62,7 +62,8 @@ while True:
 
   display.clear()
 
-  np.clear() # does this clear the pixels or the buffer?
+  for p in range(0,neopixel_count):
+    np[p] = (0,0,0)
 
   brightness = 9
   for (x,y) in list(reversed(snake)):
