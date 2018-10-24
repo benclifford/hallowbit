@@ -43,7 +43,7 @@ def set_np(x,y,brightness):
 
   pixel = y * 5 + x
 
-  np[pixel] = (32,0,0)
+  np[pixel] = (25 - brightness,brightness * 2,0)
     
 
 def random_start_pos():
