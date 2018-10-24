@@ -121,3 +121,6 @@ the microbit which I expect to be nearer my torso. (GBP 4 for 10 metres
 
 Rule of thumb for thread length: use twice as much as the distance I'm
 expecting to trace.
+
+Rule of thumb: easier to sew next pixel Data In pad first, and then
+sew back to previous Data Out.
