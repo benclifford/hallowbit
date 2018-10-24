@@ -112,3 +112,10 @@ And in the evening, up to 20 LEDs. The last two weren't working but
 I snipped away from excess conductive thread and stretched and
 wiggled it and they started working. Which is not a very
 satisfying explanation.
+
+** 2018-10-24
+
+Off to B&Q to buy some speaker cable to attach 4 wrist-buttons back up to
+the microbit which I expect to be nearer my torso. (GBP 4 for 10 metres
+- this bit is measuring in SI not Imperial)
+
