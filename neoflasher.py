@@ -2,7 +2,7 @@ from microbit import *
 import neopixel
 
 neopixel_pin = pin0
-neopixel_count = 20
+neopixel_count = 25
 
 np = neopixel.NeoPixel(neopixel_pin, neopixel_count)
 np.clear()
