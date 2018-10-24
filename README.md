@@ -120,7 +120,25 @@ the microbit which I expect to be nearer my torso. (GBP 4 for 10 metres
 - this bit is measuring in SI not Imperial)
 
 Rule of thumb for thread length: use twice as much as the distance I'm
-expecting to trace.
+expecting to trace - for long runs. and for between pixels on the
+same row: at least 3x
 
 Rule of thumb: easier to sew next pixel Data In pad first, and then
 sew back to previous Data Out.
+
+All 25 pixels sewn in. Writing (2,2,2) to all pixels, i can visually
+see drop in brightness along the powersnake: at the end the blue
+LED isn't even visible at 2,2,2. On the + rail, between the leg of the
+smooth capactitor near the start, and the final bit of + thread at the
+end of the snake, I can see a voltage drop of about 0.25v
+and 0.36v on the negative rail. I think + is less of a drop because 
+I have an extra crossconnect on one turn.
+
+Added a longer cross connect - from the two outer turns of the 
++ rail, and got the end to capacitor voltages drop to 0.17v (from 0.25v)
+
+This is with a supply voltage, from the microbit, of 3.15v (measured
+across the capactor).
+
+
+
