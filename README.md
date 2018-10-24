@@ -171,5 +171,18 @@ Worst drop across an individual pixel: 2.76v
 
 voltage drop across cross connects: 0.3v (+ve) and 0.6v (-ve)
 
+### Bigger power supply
 
+I'm now going to move to something more like the power supply
+I want to use when I'm wearing this:  a USB battery will supply 
+the microbit out of one port, and directly supply 5v to the power
+bus of the neopixels out of another port.
 
+There's a trick with an extra pixel and a diode to build a hacky
+level convertor, which I'm going to try now.
+https://hackaday.com/2017/01/20/cheating-at-5v-ws2812-control-to-use-a-3-3v-data-line/
+
+I'll need a USB cable to get a connector from, but I have a few
+of those from poundland.
+
+Also make snake program I wrote the other day display on both the microbit (with brightness control) and neopixel matrix (with colour control)
