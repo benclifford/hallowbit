@@ -119,3 +119,5 @@ Off to B&Q to buy some speaker cable to attach 4 wrist-buttons back up to
 the microbit which I expect to be nearer my torso. (GBP 4 for 10 metres
 - this bit is measuring in SI not Imperial)
 
+Rule of thumb for thread length: use twice as much as the distance I'm
+expecting to trace.
