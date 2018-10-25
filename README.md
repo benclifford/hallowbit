@@ -186,3 +186,45 @@ I'll need a USB cable to get a connector from, but I have a few
 of those from poundland.
 
 Also make snake program I wrote the other day display on both the microbit (with brightness control) and neopixel matrix (with colour control)
+
+### 2018-10-25
+
+Didn't get round to doing that power supply stuff yesterday.
+
+This morning soldering buttons - with the buttons in place,
+I'll have usable hardware as long as I don't light the LEDs up
+too brightly, so that unlocks more potential.
+
+Which pins to use?
+
+It's a jumble of "you can use any pin" vs "other functionality which might interfere (eg LEDs, i2c)"
+
+the obvious pins are 0 1 2 - the big ones.
+
+I'm already using 0 for the neopixel.
+
+8,16 look to behave the same.
+
+so:
+
+0  neopixel
+
+1  button blue
+
+2
+8
+16
+
+I'll use 0v on the other side of the switch so need to set
+pullup mode on the button.
+
+the docs say 0,1,2 have external pullsups, so pullup mode is what
+i wants anyway...
+
+set_pull is not very documented. - see microbit/micropython PR #382
+
+
+on a practical note, I'm going to stay somewhere else from today until
+the halloween party that I want this for - so I need to pack up the
+things I think I will need into a small bag, and hope I've got everything.
+
