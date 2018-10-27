@@ -228,3 +228,46 @@ on a practical note, I'm going to stay somewhere else from today until
 the halloween party that I want this for - so I need to pack up the
 things I think I will need into a small bag, and hope I've got everything.
 
+===
+later, in pub:
+showed to some people, powering it off battery for the first time.
+unfortunately the battery kept shutting down. that was frustrating.
+it happened 2y ago with different usb battery though - so unsurprising,
+though interestingly this was doing it per-port - it shut down the
+microbit port while still charging two phones.
+
+I solved it then by putting a resistor across the power lines of the
+USB, on a second port. It looks like i'd have to do it on the same
+port here.
+
+But someone on
+https://forum.pjrc.com/threads/28624-USB-Battery-Bank-Prevent-Shut-Down
+points out that the current draw might only need to happen every so 
+often (eg a 0.1s pulse every 5s is what someone thinks might work, someone
+else says 0.2s)
+
+I'm going to have an extra neopixel for doing level conversion so maybe
+I can make sure I power that periodically to full brightness.
+
+
+https://forum.pjrc.com/threads/28624-USB-Battery-Bank-Prevent-Shut-Down
+
+## 2018-10-27
+
+sew on microbit edge connector PCB - microbit upside down looks like
+it will take the weight better.
+
+soldering onto PCB - decided to use the pcb tracks on microbit
+edge connector board:
+
+one for 5v, one for 4.5v, one for resistor-protected pin0 
+
+abandon buttons for tonight due to time
+
+one LED at 100% is not enough to keep power on.
+
+one at 255,255,255 + 25 x (4,4,4) is enough
+
+if assume that is linear in power consumption, then that means 
+two or three at full power should be enough
+
