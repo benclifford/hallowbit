@@ -76,6 +76,16 @@ def set_vrows():
       set_np(col,row,(0,0,0))
     np.show()
 
+def set_rainbow():
+  np[0] = (255,255,255)
+  for count in range(0,50):
+    for row in range(0,5):
+      for col in range(0,5):
+        set_np(row,col,random_colour())
+    np.show()
+    sleep(100) 
+  np.clear()
+
 def set_xrows():
  np[0] = (255,255,255)
  for count in range(0,10): 
@@ -219,8 +229,8 @@ def run_snake():
 
 
 while True:
-  c = random.randint(0,3)
-  # c = 3
+  c = random.randint(0,4)
+  # c = 4
   if c == 0:
     set_hrows()
   if c == 1:
@@ -229,3 +239,5 @@ while True:
     set_xrows()
   if c == 3:
     run_snake()
+  if c == 4:
+    set_rainbow()
