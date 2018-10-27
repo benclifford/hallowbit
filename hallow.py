@@ -104,17 +104,3 @@ while True:
   if c == 2:
     set_xrows()
 
-def foo():
-  for led in range(1,neopixel_count):
-    np[led] = (255,0,0)
-    np.show()
-    sleep(100)
-    np[led] = (0,255,0)
-    np.show()
-    sleep(100)
-    np[led] = (0,0,255)
-    np.show()
-    sleep(100)
-    np[led] = (25,25,25)
-    # np[led] = (64,64,64)
-    np.show()
