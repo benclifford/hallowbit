@@ -50,7 +50,8 @@ def random_colour():
   return(255,255,255)
 
 def set_hrows():
-  np[0] = (255,255,255)
+ np[0] = (255,255,255)
+ for count in range(0,10): 
   colour = random_colour()
   for row in range(0,5):
     for col in range(0,5):
@@ -61,8 +62,47 @@ def set_hrows():
       set_np(row,col,(0,0,0))
     np.show()
 
+
+def set_vrows():
+ np[0] = (255,255,255)
+ for count in range(0,10): 
+  colour = random_colour()
+  for row in range(0,5):
+    for col in range(0,5):
+      set_np(col,row,colour)
+    np.show()
+    sleep(300)
+    for col in range(0,5):
+      set_np(col,row,(0,0,0))
+    np.show()
+
+def set_xrows():
+ np[0] = (255,255,255)
+ for count in range(0,10): 
+  colour = random_colour()
+  xcol = random.randint(0,4)
+  ycol = random.randint(0,4)
+  for row in range(0,5):
+    set_np(row,ycol,colour)
+  for col in range(0,5):
+    set_np(xcol,col,colour)
+  np.show()
+  sleep(600)
+  for row in range(0,5):
+    set_np(row,ycol,(0,0,0))
+  for col in range(0,5):
+    set_np(xcol,col,(0,0,0))
+
+
 while True:
-  set_hrows()
+  c = random.randint(0,2)
+  # c = 2
+  if c == 0:
+    set_hrows()
+  if c == 1:
+    set_vrows()
+  if c == 2:
+    set_xrows()
 
 def foo():
   for led in range(1,neopixel_count):
