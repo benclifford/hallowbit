@@ -33,6 +33,22 @@ def set_one():
       np[led] = (255,255,255)
     np.show()
 
+def set_zoomout():
+ for count in range(0,3):
+  colour = random_colour()
+  for radius in range(0,4):
+    for row in range(0,5):
+      for col in range(0,5):
+        if abs(row - 2) + abs(col - 2) == radius:
+          set_np(row, col, colour)
+    np[0] = (255,255,255)
+    np.show()
+    sleep(300)
+    for p in range(1,neopixel_count):
+      np[p] = (0,0,0)
+  np.clear()
+  
+
 def random_colour():
   r = random.randint(0,5)
   if r == 0:
@@ -229,8 +245,8 @@ def run_snake():
 
 
 while True:
-  c = random.randint(0,4)
-  # c = 4
+  c = random.randint(0,5)
+  # c = 5
   if c == 0:
     set_hrows()
   if c == 1:
@@ -241,3 +257,5 @@ while True:
     run_snake()
   if c == 4:
     set_rainbow()
+  if c == 5:
+    set_zoomout()

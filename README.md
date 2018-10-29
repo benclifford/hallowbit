@@ -271,3 +271,15 @@ one at 255,255,255 + 25 x (4,4,4) is enough
 if assume that is linear in power consumption, then that means 
 two or three at full power should be enough
 
+### at the party
+
+got it all wired up. got some patterns made - used snake game, and
+four different intense colour based patterns.
+
+people liked it
+
+with enough LEDs on in these patterns, it didn't switch off
+
+the sewing was a bit glitch-causing but that kinda made it look
+cool
+
