@@ -283,3 +283,21 @@ with enough LEDs on in these patterns, it didn't switch off
 the sewing was a bit glitch-causing but that kinda made it look
 cool
 
+
+## 2019-10-25
+
+A year's passed and I have less than 24h to pick up this project and finish
+it for *this* year's halloween...
+
+Let's see how useful these notes are.
+
+The tshirt with microbit in it won't boot, but microbit powered from its
+own USB will work. Time to get the multimeter out. Realised I need to
+connect separate power line for the microbit - it doesn't draw from the
+docking connector (not sure why?). Now it flashes a bunch of LEDs but there
+is a loose control connection half way through the grid which causes the
+bottom pixels to not light... holding it down with finger makes the whole
+array work - so this maybe just needs some glue?
+
+The microbit was still loaded up with the software from last year!
+so software-wise it worked as soon as I got the wiring fixed.
