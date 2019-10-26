@@ -87,9 +87,9 @@ def set_xrows():
 
 # tells us whether the snake will crash
 # on the next move.
-def will_crash(snake, snake_dir):
-  (head_x,head_y) = snake[-1] 
-  (dx,dy) = snake_dir
+def will_crash(snek, snek_dir):
+  (head_x,head_y) = snek[-1] 
+  (dx,dy) = snek_dir
 
   next_x = head_x + dx
   next_y = head_y + dy
@@ -103,16 +103,16 @@ def will_crash(snake, snake_dir):
   if next_y < 0:
     return True
 
-  for (x,y) in snake:
+  for (x,y) in snek:
     if x == next_x and y == next_y:
       return True
 
   return False
 
-def snake(ai):
+def snek(ai):
   np.clear()
-  snake_dir = (0,1)
-  snake = [(random.randint(1,3), random.randint(1,3))]
+  snek_dir = (0,1)
+  snek = [(random.randint(1,3), random.randint(1,3))]
   target_len = 3 
   counts = 0
   go = True
@@ -125,7 +125,7 @@ def snake(ai):
       np[p] = (0,0,0)
 
     brightness = 9
-    for ((x,y),pos) in zip(list(reversed(snake)),range(0,5*5)):
+    for ((x,y),pos) in zip(list(reversed(snek)),range(0,5*5)):
       display.set_pixel(x,y,brightness)
       if pos < 2: # head
         set_np(x,y,(10 * brightness, 8 * brightness, 27 * brightness))
@@ -138,30 +138,31 @@ def snake(ai):
 
     if ai:
         sleep(200)
-        snake_dir = snake_ai(snake, snake_dir)
+        snek_dir = snek_ai(snek, snek_dir)
     else:
         sleep(500) # slower for humans
-        snake_dir = snake_buttons(snake, snake_dir)
+        snek_dir = snek_buttons(snek, snek_dir)
 
-    # this is the environment checking crashes
-    if will_crash(snake, snake_dir):
+    if will_crash(snek, snek_dir):
       go = False
+      for (x,y) in snek:
+        set_np(x,y,255,0,0)
       sleep(1000)
       np.clear()
 
-    (head_x,head_y) = snake[-1] 
-    (dx,dy) = snake_dir
+    (head_x,head_y) = snek[-1] 
+    (dx,dy) = snek_dir
 
-    snake.append( (head_x + dx, head_y + dy) ) # new head
-    if len(snake) > target_len:
-      snake.pop(0) # old tail
+    snek.append( (head_x + dx, head_y + dy) ) # new head
+    if len(snek) > target_len:
+      snek.pop(0) # old tail
 
     counts += 1
     if counts > 5:
       counts = 0
       target_len += 1
 
-def snake_buttons(snake, snake_dir):
+def snek_buttons(snek, snek_dir):
   if not pin1.read_digital():
     return (0,-1)
   if not pin2.read_digital():
@@ -170,27 +171,27 @@ def snake_buttons(snake, snake_dir):
     return (-1,0)
   if not pin16.read_digital():
     return (1,0)
-  return snake_dir
+  return snek_dir
 
-def snake_ai(snake, snake_dir): # snake autopilot
+def snek_ai(snek, snek_dir): # snek autopilot
     random_change = random.randint(0,10) == 7
 
-    if will_crash(snake, snake_dir) or random_change:
-      (dx,dy) = snake_dir
+    if will_crash(snek, snek_dir) or random_change:
+      (dx,dy) = snek_dir
 
       if dx == 0: # then we're going along the y axis, so could go up or down
-        if not will_crash(snake, (1,0)):
-          snake_dir = (1,0)
-        elif not will_crash(snake, (-1,0)):
-          snake_dir = (-1,0)
+        if not will_crash(snek, (1,0)):
+          snek_dir = (1,0)
+        elif not will_crash(snek, (-1,0)):
+          snek_dir = (-1,0)
         # if neither works, give up...
       elif dy == 0: # then we're going along the x axis
-        if not will_crash(snake, (0,1)):
-          snake_dir = (0,1)
-        elif not will_crash(snake, (0,-1)):
-          snake_dir = (0,-1)
+        if not will_crash(snek, (0,1)):
+          snek_dir = (0,1)
+        elif not will_crash(snek, (0,-1)):
+          snek_dir = (0,-1)
 
-    return snake_dir
+    return snek_dir
 
 while True:
 
@@ -203,11 +204,11 @@ while True:
   if c == 2:
     set_xrows()
   if c == 3:
-    snake(True)
+    snek(True)
   if c == 4:
     set_rainbow()
   if c == 5:
     set_zoomout()
 
  while pin11.read_digital():
-   snake(False)
+   snek(False)
