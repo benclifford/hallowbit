@@ -124,29 +124,27 @@ def snek(ai):
     for p in range(1,26):
       np[p] = (0,0,0)
 
-    brightness = 9
     for ((x,y),pos) in zip(list(reversed(snek)),range(0,5*5)):
-      display.set_pixel(x,y,brightness)
+      display.set_pixel(x,y,9)
       if pos < 2: # head
         set_np(x,y,(32, 32, 255))
       else:
         hue = min(pos,26) # start read, head to green, via yellow
-        set_np(x,y,(hue * bri, (26-hue) * bri, 0))
-      if brightness > 4:
-        brightness -= 1
+        set_np(x,y,(hue * 9, (26-hue) * 9, 0))
     np.show()
 
     if ai:
-        sleep(200)
-        snek_dir = snek_ai(snek, snek_dir)
+      sleep(200)
+      snek_dir = snek_ai(snek, snek_dir)
     else:
-        sleep(500) # slower for humans
-        snek_dir = snek_buttons(snek, snek_dir)
+      sleep(500) # slower for humans
+      snek_dir = snek_buttons(snek, snek_dir)
 
     if will_crash(snek, snek_dir):
       go = False
       for (x,y) in snek:
         set_np(x,y,(255,0,0))
+      np.show()
       sleep(1000)
       np.clear()
 
