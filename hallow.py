@@ -9,6 +9,12 @@ neopixel_count = 26
 np = neopixel.NeoPixel(neopixel_pin, neopixel_count)
 np.clear()
 
+# initialize game buttons
+pin1.set_pull(pin1.PULL_UP)
+pin2.set_pull(pin2.PULL_UP)
+pin8.set_pull(pin8.PULL_UP)
+pin16.set_pull(pin16.PULL_UP)
+
 
 def set_np(x,y,col):
   if y % 2 == 0:
@@ -161,10 +167,13 @@ def run_snake(ai):
         brightness = brightness - 1
     np.show()
 
-    sleep(200)
 
     if ai:
+        sleep(200)
         snake_dir = snake_ai(snake, snake_dir)
+    else:
+        sleep(500) # slower for humans
+        snake_dir = snake_buttons(snake, snake_dir)
 
     # this is the environment checking crashes
     if will_crash(snake, snake_dir):
@@ -185,6 +194,18 @@ def run_snake(ai):
     if counts > 5:
       counts = 0
       target_len = target_len + 1
+
+def snake_buttons(snake, snake_dir):
+  if not pin1.read_digital():
+    return (0,-1)
+  if not pin2.read_digital():
+    return (0,1)
+  if not pin8.read_digital():
+    return (-1,0)
+  if not pin16.read_digital():
+    return (1,0)
+  return snake_dir
+
 
 def snake_ai(snake, snake_dir):
 
@@ -230,6 +251,8 @@ def snake_ai(snake, snake_dir):
 
     return snake_dir
 
+while True:
+  run_snake(False)
 
 while True:
   c = random.randint(0,5)

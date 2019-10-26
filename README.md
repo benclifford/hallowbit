@@ -345,10 +345,10 @@ program... I already have external-button.py!
 
 Now attach the pins as follows:
 
-red 1
-green 2
-blue 8
-yellow 16
+red 1  [up]
+green 2 [down]
+blue 8 [left]
+yellow 16  [right]
 
 These will all need securing and taping a lot but lets get going on the
 software...
@@ -362,6 +362,8 @@ is my 5kb source file too big? :(
 I removed an unused function (set_one) and it runs without memory error
 so I guess I am right on the limit of what fits?
 
+There's also a minify option in uflash I should try out. looks like I need
+to install 'nudatus'? seems to do something.
 
 
 
