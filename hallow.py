@@ -96,13 +96,10 @@ def will_crash(snake, snake_dir):
 
   if next_x > 4:
     return True
-
   if next_x < 0:
     return True
-
   if next_y > 4:
     return True
-
   if next_y < 0:
     return True
 
@@ -114,14 +111,10 @@ def will_crash(snake, snake_dir):
 
 def snake(ai):
   np.clear()
-
   snake_dir = (0,1)
   snake = [(random.randint(1,3), random.randint(1,3))]
-
   target_len = 3 
-
   counts = 0
-
   go = True
   while go:
 
@@ -143,7 +136,6 @@ def snake(ai):
         brightness -= 1
     np.show()
 
-
     if ai:
         sleep(200)
         snake_dir = snake_ai(snake, snake_dir)
@@ -161,12 +153,10 @@ def snake(ai):
     (dx,dy) = snake_dir
 
     snake.append( (head_x + dx, head_y + dy) ) # new head
-
     if len(snake) > target_len:
       snake.pop(0) # old tail
 
     counts += 1
-
     if counts > 5:
       counts = 0
       target_len += 1
