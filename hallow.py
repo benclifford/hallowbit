@@ -1,6 +1,5 @@
 from microbit import *
 import neopixel
-
 import random
 
 np = neopixel.NeoPixel(pin0, 26)
@@ -61,7 +60,6 @@ def set_rows(hv):
         set_np(col,row,(0,0,0))
     np.show()
 
-
 def set_rainbow():
   np[0] = (255,255,255)
   for count in range(0,50):
@@ -86,8 +84,6 @@ def set_xrows():
   for n in range(0,5):
     set_np(n,ycol,(0,0,0))
     set_np(xcol,n,(0,0,0))
-
-
 
 # tells us whether the snake will crash
 # on the next move.
@@ -185,7 +181,6 @@ def snake_buttons(snake, snake_dir):
   if not pin16.read_digital():
     return (1,0)
   return snake_dir
-
 
 def snake_ai(snake, snake_dir):
 
