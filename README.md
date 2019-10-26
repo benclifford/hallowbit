@@ -326,3 +326,42 @@ I realised I can have the microbit USB connected into laptop for programming
 while also powering the pixel array from the t-shirt USB connector... maybe
 that's why I gave them separate connectors?
 
+There are lots of pins on the microbit, but they're used for lots of
+purposes: https://microbit.org/guide/hardware/pins/
+... so I need to figure out which ones I can use.
+
+Looks like earlier in journal I wrote to use pins: 1,2,8,16, and that two
+of those have pullups, so the buttons need to go down to 0v, not to +v.
+This arrangement leaves the A/B buttons on the microbit board separately
+connected so they could be used to select mode/game/etc...
+
+Having pins on the breakout board is a bit annoying, rather than holes to
+solder directly to -- for the one pin i've used already, I ended up chopping
+off a bit of a jumper cable.  So I suppose I'll have to do something like
+that here too.
+
+After a bunch of soldering, let's test out the pins by uploading a test
+program... I already have external-button.py!
+
+Now attach the pins as follows:
+
+red 1
+green 2
+blue 8
+yellow 16
+
+These will all need securing and taping a lot but lets get going on the
+software...
+
+First, modify snake to be controlled by buttons rather than th AI...
+and as part of that do a refactor... and now I get a memory error
+at boot...
+
+is my 5kb source file too big? :(
+
+I removed an unused function (set_one) and it runs without memory error
+so I guess I am right on the limit of what fits?
+
+
+
+
