@@ -128,10 +128,10 @@ def snek(ai):
     for ((x,y),pos) in zip(list(reversed(snek)),range(0,5*5)):
       display.set_pixel(x,y,brightness)
       if pos < 2: # head
-        set_np(x,y,(10 * brightness, 8 * brightness, 27 * brightness))
+        set_np(x,y,(32, 32, 255))
       else:
-        shading = min(pos,26) # start read, head to green, via yellow
-        set_np(x,y,((26-shading) * brightness, shading * brightness, 0))
+        hue = min(pos,26) # start read, head to green, via yellow
+        set_np(x,y,(hue * bri, (26-hue) * bri, 0))
       if brightness > 4:
         brightness -= 1
     np.show()
