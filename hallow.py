@@ -172,43 +172,19 @@ def snake_buttons(snake, snake_dir):
     return (1,0)
   return snake_dir
 
-def snake_ai(snake, snake_dir):
-
-    # this is the autopilot checking if it will crash
-    # it is allowed to go wrong, just like a player is
-    # allowed to go wrong
-
-    # are we forced to change direction by imminent crash?
-    # or, should we change direction randomly anyway?
-    # (in that second case, the path of not changing direction
-    # if we'd crash on either of our alternatives keeps us
-    # going rather than randomly turning to death)
-
+def snake_ai(snake, snake_dir): # snake autopilot
     random_change = random.randint(0,10) == 7
 
     if will_crash(snake, snake_dir) or random_change:
-      # We'd better take some evasive action to
-      # not crash.
-      # We have a choice of directions - usually two
-      # and we can check if either of them is any good
-      # and if so, take one of the good ones. 
-    
-      # assume we're going one of the 4 cardinal
-      # directions
-
       (dx,dy) = snake_dir
 
-      if dx == 0: # then we're going along the y axis
-                  # and are possible positions are along
-                  # the x axis
-
+      if dx == 0: # then we're going along the y axis, so could go up or down
         if not will_crash(snake, (1,0)):
           snake_dir = (1,0)
         elif not will_crash(snake, (-1,0)):
           snake_dir = (-1,0)
         # if neither works, give up...
-
-      elif dy == 0:
+      elif dy == 0: # then we're going along the x axis
         if not will_crash(snake, (0,1)):
           snake_dir = (0,1)
         elif not will_crash(snake, (0,-1)):
