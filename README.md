@@ -313,5 +313,11 @@ Let's try loading the software from this repo onto the microbit again,
 using uflash. A bit of messing round with the wrong usb cable and
 mountpoints, but this command worked: sudo uflash ./hallow.py /media/tmp
 
+Did a bit of fiddling with snake colouring to make the body topology
+more visible when the display is getting full.
 
+Now it's time to attach some buttons.
 
+I'd also like mypy to work to tell me errors before I load them on and have
+to read exception messages off the 5x5 scrollng display... but let's not
+get distracted from the hardware side for now.
