@@ -179,7 +179,8 @@ def run_snake():
       if pos < 2: # head
         set_np(x,y,(10 * brightness, 8 * brightness, 27 * brightness))
       else:
-        set_np(x,y,(26 * brightness, 5 * brightness, 0))
+        shading = min(pos,26) # start read, head to green, via yellow
+        set_np(x,y,((26-shading) * brightness, shading * brightness, 0))
       if brightness > 4:
         brightness = brightness - 1
     np.show()
