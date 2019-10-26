@@ -94,13 +94,7 @@ def will_crash(snek, snek_dir):
   next_x = head_x + dx
   next_y = head_y + dy
 
-  if next_x > 4:
-    return True
-  if next_x < 0:
-    return True
-  if next_y > 4:
-    return True
-  if next_y < 0:
+  if next_x > 4 or next_x < 0 or next_y > 4 or next_y < 0: # border
     return True
 
   for (x,y) in snek:
