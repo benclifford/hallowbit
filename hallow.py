@@ -3,10 +3,9 @@ import neopixel
 
 import random
 
-neopixel_pin = pin0
 np_count = 26
 
-np = neopixel.NeoPixel(neopixel_pin, np_count)
+np = neopixel.NeoPixel(pin0, np_count)
 np.clear()
 
 # initialize game buttons
