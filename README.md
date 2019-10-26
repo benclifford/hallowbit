@@ -301,3 +301,17 @@ array work - so this maybe just needs some glue?
 
 The microbit was still loaded up with the software from last year!
 so software-wise it worked as soon as I got the wiring fixed.
+
+## 2019-10-26
+
+Used a bit of solder to fix up the missing loose connection - the solder
+won't stick to the thread itself but it does stick to the metal pads on
+the neopixels, and holds stuff a little more in place. Hopefully that's
+good enough for today.
+
+Let's try loading the software from this repo onto the microbit again,
+using uflash. A bit of messing round with the wrong usb cable and
+mountpoints, but this command worked: sudo uflash ./hallow.py /media/tmp
+
+
+
