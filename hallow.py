@@ -26,13 +26,6 @@ def set_flat():
     np.show()
 
 
-def set_one():
-  while True:
-    np[0] = (255,255,255)
-    for led in range(1,3):
-      np[led] = (255,255,255)
-    np.show()
-
 def set_zoomout():
  for count in range(0,3):
   colour = random_colour()
@@ -154,7 +147,7 @@ def random_start_pos():
   # immediately crash
   return [(random.randint(1,3), random.randint(1,3))]
 
-def run_snake():
+def run_snake(ai):
   np.clear()
 
   snake_dir = (0,1)
@@ -186,6 +179,31 @@ def run_snake():
     np.show()
 
     sleep(200)
+
+    if ai:
+        snake_dir = snake_ai(snake, snake_dir)
+
+    # this is the environment checking crashes
+    if will_crash(snake, snake_dir):
+      go = False
+      sleep(1000)
+      np.clear()
+
+    (head_x,head_y) = snake[-1] 
+    (dx,dy) = snake_dir
+
+    snake.append( (head_x + dx, head_y + dy) ) # new head
+
+    if len(snake) > target_len:
+      snake.pop(0) # old tail
+
+    counts = counts + 1
+
+    if counts > 5:
+      counts = 0
+      target_len = target_len + 1
+
+def snake_ai(snake, snake_dir):
 
     # this is the autopilot checking if it will crash
     # it is allowed to go wrong, just like a player is
@@ -227,25 +245,7 @@ def run_snake():
         elif not will_crash(snake, (0,-1)):
           snake_dir = (0,-1)
 
-    # this is the environment checking crashes
-    if will_crash(snake, snake_dir):
-      go = False
-      sleep(1000)
-      np.clear()
-
-    (head_x,head_y) = snake[-1] 
-    (dx,dy) = snake_dir
-
-    snake.append( (head_x + dx, head_y + dy) ) # new head
-
-    if len(snake) > target_len:
-      snake.pop(0) # old tail
-
-    counts = counts + 1
-
-    if counts > 5:
-      counts = 0
-      target_len = target_len + 1
+    return snake_dir
 
 
 while True:
@@ -258,7 +258,7 @@ while True:
   if c == 2:
     set_xrows()
   if c == 3:
-    run_snake()
+    run_snake(True)
   if c == 4:
     set_rainbow()
   if c == 5:
