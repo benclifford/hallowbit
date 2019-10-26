@@ -321,3 +321,8 @@ Now it's time to attach some buttons.
 I'd also like mypy to work to tell me errors before I load them on and have
 to read exception messages off the 5x5 scrollng display... but let's not
 get distracted from the hardware side for now.
+
+I realised I can have the microbit USB connected into laptop for programming
+while also powering the pixel array from the t-shirt USB connector... maybe
+that's why I gave them separate connectors?
+
