@@ -172,11 +172,8 @@ def snek_buttons(snek, snek_dir):
   return snek_dir
 
 def snek_ai(snek, snek_dir): # snek autopilot
-    random_change = random.randint(0,10) == 7
-
-    if will_crash(snek, snek_dir) or random_change:
+    if will_crash(snek, snek_dir) or random.randint(0,10) == 7:
       (dx,dy) = snek_dir
-
       if dx == 0: # then we're going along the y axis, so could go up or down
         if not will_crash(snek, (1,0)):
           snek_dir = (1,0)
@@ -188,11 +185,9 @@ def snek_ai(snek, snek_dir): # snek autopilot
           snek_dir = (0,1)
         elif not will_crash(snek, (0,-1)):
           snek_dir = (0,-1)
-
     return snek_dir
 
 while True:
-
  while pin5.read_digital():
   c = random.randint(0,5)
   if c == 0:
@@ -207,6 +202,5 @@ while True:
     set_rainbow()
   if c == 5:
     set_zoomout()
-
  while pin11.read_digital():
    snek(False)
