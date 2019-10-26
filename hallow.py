@@ -31,20 +31,16 @@ def set_zoomout():
   np.clear()
 
 def rand_color():
-  r = random.randint(0,5)
-  if r == 0:
-    return (255,0,0)
-  if r == 1:
-    return (0,255,0)
-  if r == 2:
-    return (255,255,0)
-  if r == 3:
-    return (0,0,255)
-  if r == 4:
-    return (255,0,255)
-  if r == 5:
-    return (0,255,255)
-  return(255,255,255)
+  cols = [
+    (255,0,0),
+    (0,255,0),
+    (255,255,0),
+    (0,0,255),
+    (255,0,255),
+    (0,255,255),
+    (255,255,255)
+  ]
+  return cols[random.randint(0,5)]
 
 def set_rows(hv):
  np[0] = (255,255,255)
@@ -59,7 +55,10 @@ def set_rows(hv):
     np.show()
     sleep(300)
     for col in range(0,5):
-      set_np(row,col,(0,0,0))
+      if hv:
+        set_np(row,col,(0,0,0))
+      else:
+        set_np(col,row,(0,0,0))
     np.show()
 
 
