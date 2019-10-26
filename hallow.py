@@ -3,26 +3,17 @@ import neopixel
 
 import random
 
-np_count = 26
-
-np = neopixel.NeoPixel(pin0, np_count)
+np = neopixel.NeoPixel(pin0, 26)
 np.clear()
 
-# initialize game buttons
-pin1.set_pull(pin1.PULL_UP)
-pin2.set_pull(pin2.PULL_UP)
-pin8.set_pull(pin8.PULL_UP)
-pin16.set_pull(pin16.PULL_UP)
-
+for p in [pin1, pin2, pin5, pin8, pin11, pin16]:
+  p.set_pull(p.PULL_UP)
 
 def set_np(x,y,col):
   if y % 2 == 0:
     x = 4-x
-
   pixel = y * 5 + x + 1
-
   np[pixel] = col
-
 
 def set_zoomout():
  for count in range(0,3):
@@ -35,10 +26,9 @@ def set_zoomout():
     np[0] = (255,255,255)
     np.show()
     sleep(300)
-    for p in range(1,np_count):
+    for p in range(1,26):
       np[p] = (0,0,0)
   np.clear()
-  
 
 def random_colour():
   r = random.randint(0,5)
@@ -129,17 +119,11 @@ def will_crash(snake, snake_dir):
 
   return False
 
-
-def rand_start_pos():
-  # avoid starting at an edge, so that we don't
-  # immediately crash
-  return [(random.randint(1,3), random.randint(1,3))]
-
-def run_snake(ai):
+def snake(ai):
   np.clear()
 
   snake_dir = (0,1)
-  snake = rand_start_pos()
+  snake = [(random.randint(1,3), random.randint(1,3))]
 
   target_len = 3 
 
@@ -151,7 +135,7 @@ def run_snake(ai):
     display.clear()
 
     np[0] = (255,255,255)
-    for p in range(1,np_count):
+    for p in range(1,26):
       np[p] = (0,0,0)
 
     brightness = 9
@@ -251,11 +235,9 @@ def snake_ai(snake, snake_dir):
     return snake_dir
 
 while True:
-  run_snake(False)
 
-while True:
+ while pin5.read_digital():
   c = random.randint(0,5)
-  # c = 5
   if c == 0:
     set_rows(False)
   if c == 1:
@@ -263,8 +245,11 @@ while True:
   if c == 2:
     set_xrows()
   if c == 3:
-    run_snake(True)
+    snake(True)
   if c == 4:
     set_rainbow()
   if c == 5:
     set_zoomout()
+
+ while pin11.read_digital():
+   snake(False)

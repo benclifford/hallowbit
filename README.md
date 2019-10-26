@@ -366,4 +366,9 @@ There's also a minify option in uflash I should try out. looks like I need
 to install 'nudatus'? seems to do something.
 
 
+Use a sharpie to put the above direction labels onto buttons (because I'll just
+be holding them in my hands, and probably drunk)
 
+Put lots of electrical tape on everything now for support and isolation.
+
+Now I need to wire up A/B buttons to switch between display and game mode.
