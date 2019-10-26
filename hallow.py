@@ -174,9 +174,12 @@ def run_snake():
       np[p] = (0,0,0)
 
     brightness = 9
-    for (x,y) in list(reversed(snake)):
+    for ((x,y),pos) in zip(list(reversed(snake)),range(0,5*5)):
       display.set_pixel(x,y,brightness)
-      set_np(x,y,(26 * brightness, 5 * brightness, 0))
+      if pos < 2: # head
+        set_np(x,y,(10 * brightness, 8 * brightness, 27 * brightness))
+      else:
+        set_np(x,y,(26 * brightness, 5 * brightness, 0))
       if brightness > 4:
         brightness = brightness - 1
     np.show()
