@@ -146,7 +146,7 @@ def snek(ai):
     if will_crash(snek, snek_dir):
       go = False
       for (x,y) in snek:
-        set_np(x,y,255,0,0)
+        set_np(x,y,(255,0,0))
       sleep(1000)
       np.clear()
 
