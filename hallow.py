@@ -18,13 +18,6 @@ def set_np(x,y,col):
 
   np[pixel] = col
 
-def set_flat():
-  while True:
-    np[0] = (255,255,255)
-    for led in range(1,neopixel_count):
-      np[led] = (4,4,4)
-    np.show()
-
 
 def set_zoomout():
  for count in range(0,3):
