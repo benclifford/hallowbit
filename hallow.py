@@ -17,7 +17,7 @@ def set_np(x,y,col):
 
 def set_zoomout():
  for count in range(0,3):
-  colour = random_colour()
+  colour = rand_color()
   for radius in range(0,4):
     for row in range(0,5):
       for col in range(0,5):
@@ -30,7 +30,7 @@ def set_zoomout():
       np[p] = (0,0,0)
   np.clear()
 
-def random_colour():
+def rand_color():
   r = random.randint(0,5)
   if r == 0:
     return (255,0,0)
@@ -49,7 +49,7 @@ def random_colour():
 def set_rows(hv):
  np[0] = (255,255,255)
  for count in range(0,10): 
-  colour = random_colour()
+  colour = rand_color()
   for row in range(0,5):
     for col in range(0,5):
       if hv:
@@ -68,7 +68,7 @@ def set_rainbow():
   for count in range(0,50):
     for row in range(0,5):
       for col in range(0,5):
-        set_np(row,col,random_colour())
+        set_np(row,col,rand_color())
     np.show()
     sleep(100) 
   np.clear()
@@ -76,19 +76,17 @@ def set_rainbow():
 def set_xrows():
  np[0] = (255,255,255)
  for count in range(0,10): 
-  colour = random_colour()
+  colour = rand_color()
   xcol = random.randint(0,4)
   ycol = random.randint(0,4)
-  for row in range(0,5):
-    set_np(row,ycol,colour)
-  for col in range(0,5):
-    set_np(xcol,col,colour)
+  for n in range(0,5):
+    set_np(n,ycol,colour)
+    set_np(xcol,n,colour)
   np.show()
   sleep(600)
-  for row in range(0,5):
-    set_np(row,ycol,(0,0,0))
-  for col in range(0,5):
-    set_np(xcol,col,(0,0,0))
+  for n in range(0,5):
+    set_np(n,ycol,(0,0,0))
+    set_np(xcol,n,(0,0,0))
 
 
 
