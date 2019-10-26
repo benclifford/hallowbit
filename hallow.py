@@ -51,32 +51,22 @@ def random_colour():
     return (0,255,255)
   return(255,255,255)
 
-def set_hrows():
+def set_rows(hv):
  np[0] = (255,255,255)
  for count in range(0,10): 
   colour = random_colour()
   for row in range(0,5):
     for col in range(0,5):
-      set_np(row,col,colour)
+      if hv:
+        set_np(row,col,colour)
+      else:
+        set_np(col,row,colour)
     np.show()
     sleep(300)
     for col in range(0,5):
       set_np(row,col,(0,0,0))
     np.show()
 
-
-def set_vrows():
- np[0] = (255,255,255)
- for count in range(0,10): 
-  colour = random_colour()
-  for row in range(0,5):
-    for col in range(0,5):
-      set_np(col,row,colour)
-    np.show()
-    sleep(300)
-    for col in range(0,5):
-      set_np(col,row,(0,0,0))
-    np.show()
 
 def set_rainbow():
   np[0] = (255,255,255)
@@ -245,9 +235,9 @@ while True:
   c = random.randint(0,5)
   # c = 5
   if c == 0:
-    set_hrows()
+    set_rows(False)
   if c == 1:
-    set_vrows()
+    set_rows(True)
   if c == 2:
     set_xrows()
   if c == 3:
